@@ -20,5 +20,6 @@ build:
     - "protobuf"
   run:
     - "pip install git+https://github.com/huggingface/diffusers.git"
+    - "python3 -c \"from huggingface_hub import snapshot_download; snapshot_download(repo_id='Wan-AI/Wan2.2-I2V-A14B-Diffusers', ignore_patterns=['*.pt', '*.bin'])\""
 
 predict: "predict.py:Predictor"
