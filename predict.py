@@ -13,14 +13,10 @@ MODEL_ID = "Wan-AI/Wan2.2-I2V-A14B-Diffusers"
 class Predictor(BasePredictor):
     def setup(self) -> None:
         """Download weights and load the model into memory"""
-        os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
-        hf_token = os.environ.get("HF_TOKEN")
-
         print(f"Downloading and loading {MODEL_ID}...")
         self.pipe = WanImageToVideoPipeline.from_pretrained(
             MODEL_ID,
             torch_dtype=torch.bfloat16,
-            token=hf_token,
         )
 
         # REQUIRED FOR 14B MoE MODEL: Offloads weights to CPU RAM when not actively in use
