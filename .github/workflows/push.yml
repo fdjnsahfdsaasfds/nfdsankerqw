@@ -30,4 +30,4 @@ jobs:
         env:
           MODEL_NAME: ${{ inputs.model_name }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: cog push r8.im/$MODEL_NAME
+        run: cog push r8.im/$MODEL_NAME --no-cache

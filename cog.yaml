@@ -20,6 +20,6 @@ build:
     - "protobuf"
   run:
     - "pip install git+https://github.com/huggingface/diffusers.git"
-    - "python /src/download_weights.py"
+    - "HF_HUB_ENABLE_HF_TRANSFER=1 python3 -c \"import os; from huggingface_hub import snapshot_download; snapshot_download(repo_id='Wan-AI/Wan2.2-I2V-A14B-Diffusers', ignore_patterns=['*.pt', '*.bin'], token=os.environ.get('HF_TOKEN'))\""
 
 predict: "predict.py:Predictor"
