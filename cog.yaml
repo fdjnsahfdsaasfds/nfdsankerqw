@@ -15,12 +15,12 @@ build:
     - "Pillow"
     - "imageio==2.36.1"
     - "imageio-ffmpeg==0.5.1"
-    - "huggingface-hub"
+    - "huggingface-hub==0.26.2"
     - "requests"
     - "peft"
     - "protobuf"
   run:
     - "pip install git+https://github.com/huggingface/diffusers.git"
-    - "HF_HUB_DISABLE_XET_DOWNLOAD=1 python3 -c \"from huggingface_hub import snapshot_download; snapshot_download(repo_id='Wan-AI/Wan2.2-I2V-A14B-Diffusers', ignore_patterns=['*.pt', '*.bin'])\""
+    - "python3 -c \"from huggingface_hub import snapshot_download; snapshot_download(repo_id='Wan-AI/Wan2.2-I2V-A14B-Diffusers', ignore_patterns=['*.pt', '*.bin'])\""
 
 predict: "predict.py:Predictor"
