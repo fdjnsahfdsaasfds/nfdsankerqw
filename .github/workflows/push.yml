@@ -11,12 +11,14 @@ jobs:
   push_to_replicate:
     name: Build and Push
     runs-on: ubuntu-latest
+    timeout-minutes: 720
     steps:
       - name: Free disk space
         uses: jlumbroso/free-disk-space@v1.3.1
         with:
           tool-cache: false
-          docker-images: false
+          docker-images: true
+          large-packages: true
 
       - name: Checkout Code
         uses: actions/checkout@v4

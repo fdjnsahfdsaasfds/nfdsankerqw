@@ -7,8 +7,8 @@ build:
   python_version: "3.11"
   python_packages:
     - "torch==2.5.1"
-    - "torchvision"
-    - "torchaudio"
+    - "torchvision==0.20.1"
+    - "torchaudio==2.5.1"
     - "transformers"
     - "accelerate"
     - "sentencepiece"
